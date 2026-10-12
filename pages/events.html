@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore CampusHub lectures, workshops, career fairs, and seminars.">
+  <title>Events | CampusHub University Portal</title>
+</head>
+<body>
+  <a href="#main-content">Skip to main content</a>
+
+  <header>
+    <p><a href="index.html">CampusHub</a></p>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="instructors.html">Instructors</a></li>
+        <li><a href="events.html" aria-current="page">Events</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <header>
+      <h1>Events</h1>
+      <p>
+        Discover opportunities to learn, develop practical skills, and
+        connect with the CampusHub community.
+      </p>
+      <p>This sample listing contains events from April and May 2025.</p>
+    </header>
+
+    <section aria-labelledby="search-heading">
+      <h2 id="search-heading">Find an event</h2>
+      <p id="search-note">
+        Search and filtering are demonstration controls and are
+        unavailable on this static page.
+      </p>
+
+      <form aria-describedby="search-note">
+        <fieldset disabled>
+          <legend>Event search controls (demonstration only)</legend>
+
+          <p>
+            <label for="event-search">Search by event name</label>
+            <input
+              type="search"
+              id="event-search"
+              name="search"
+              placeholder="For example, Web Development"
+            >
+          </p>
+
+          <p>
+            <label for="event-category">Event category</label>
+            <select id="event-category" name="category">
+              <option value="">All categories</option>
+              <option value="lectures">Guest lectures</option>
+              <option value="workshops">Workshops</option>
+              <option value="career-fairs">Career fairs</option>
+              <option value="seminars">Seminars</option>
+            </select>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+
+    <nav aria-label="Event categories">
+      <h2>Browse by category</h2>
+      <ul>
+        <li><a href="#event-list">All events</a></li>
+        <li><a href="#ai-lecture">Guest lectures</a></li>
+        <li><a href="#web-workshop">Workshops</a></li>
+        <li><a href="#career-fair">Career fairs</a></li>
+        <li><a href="#digital-seminar">Seminars</a></li>
+      </ul>
+    </nav>
+
+    <section id="event-list" aria-labelledby="events-heading">
+      <h2 id="events-heading">Event listing</h2>
+
+      <article id="ai-lecture" aria-labelledby="ai-heading">
+        <img
+          src="images/ai-education-lecture.jpg"
+          alt="Guest speaker presenting to students in a university lecture hall"
+          width="400"
+          height="240"
+          loading="lazy"
+        >
+        <h3 id="ai-heading">Guest Lecture: AI in Education</h3>
+        <dl>
+          <dt>Category</dt>
+          <dd>Guest lecture</dd>
+
+          <dt>Date</dt>
+          <dd><time datetime="2025-04-15">15 April 2025</time></dd>
+
+          <dt>Time</dt>
+          <dd>
+            <time datetime="2025-04-15T10:00">10:00 a.m.</time>
+            to <time datetime="2025-04-15T11:30">11:30 a.m.</time>
+          </dd>
+
+          <dt>Venue</dt>
+          <dd>Main Building, Lecture Hall A</dd>
+        </dl>
+        <p>
+          Explore how artificial intelligence can support teaching,
+          learning, and academic research, with discussion of responsible use.
+        </p>
+        <p>
+          <a href="#ai-details" aria-label="View details for Guest Lecture: AI in Education">
+            View Details
+          </a>
+        </p>
+        <details id="ai-details">
+          <summary>Guest lecture details</summary>
+          <p>
+            Dr. Elena Morgan will introduce examples of AI-assisted learning,
+            followed by a discussion of privacy, accuracy, and academic integrity.
+            The session concludes with audience questions.
+          </p>
+        </details>
+      </article>
+
+      <article id="web-workshop" aria-labelledby="web-heading">
+        <img
+          src="images/web-development-workshop.jpg"
+          alt="Students working on laptops during a web development workshop"
+          width="400"
+          height="240"
+          loading="lazy"
+        >
+        <h3 id="web-heading">Workshop: Web Development</h3>
+        <dl>
+          <dt>Category</dt>
+          <dd>Workshop</dd>
+
+          <dt>Date</dt>
+          <dd><time datetime="2025-04-22">22 April 2025</time></dd>
+
+          <dt>Time</dt>
+          <dd>
+            <time datetime="2025-04-22T14:00">2:00 p.m.</time>
+            to <time datetime="2025-04-22T16:00">4:00 p.m.</time>
+          </dd>
+
+          <dt>Venue</dt>
+          <dd>Technology Building, Computer Lab 204</dd>
+        </dl>
+        <p>
+          Practice building an accessible webpage using semantic HTML,
+          descriptive links, and clearly labeled form controls.
+        </p>
+        <p>
+          <a href="#web-details" aria-label="View details for Workshop: Web Development">
+            View Details
+          </a>
+        </p>
+        <details id="web-details">
+          <summary>Web development workshop details</summary>
+          <p>
+            Dr. Daniel Chen will guide participants through a small webpage
+            project. Basic HTML knowledge is helpful. Laboratory computers
+            are available, or participants may bring a laptop.
+          </p>
+        </details>
+      </article>
+
+      <article id="career-fair" aria-labelledby="career-heading">
+        <img
+          src="images/career-fair.jpg"
+          alt="Students talking with employer representatives at campus career booths"
+          width="400"
+          height="240"
+          loading="lazy"
+        >
+        <h3 id="career-heading">Career Fair 2025</h3>
+        <dl>
+          <dt>Category</dt>
+          <dd>Career fair</dd>
+
+          <dt>Date</dt>
+          <dd><time datetime="2025-04-30">30 April 2025</time></dd>
+
+          <dt>Time</dt>
+          <dd>
+            <time datetime="2025-04-30T09:00">9:00 a.m.</time>
+            to <time datetime="2025-04-30T15:00">3:00 p.m.</time>
+          </dd>
+
+          <dt>Venue</dt>
+          <dd>Student Center, Main Hall</dd>
+        </dl>
+        <p>
+          Meet employer representatives, explore internship opportunities,
+          and learn about graduate career paths across several industries.
+        </p>
+        <p>
+          <a href="#career-details" aria-label="View details for Career Fair 2025">
+            View Details
+          </a>
+        </p>
+        <details id="career-details">
+          <summary>Career fair details</summary>
+          <p>
+            The fair includes employer information booths and short career
+            talks. Bring copies of your résumé and prepare questions about
+            placements, recruitment processes, and entry-level roles.
+          </p>
+        </details>
+      </article>
+
+      <article id="digital-seminar" aria-labelledby="digital-heading">
+        <img
+          src="images/digital-transformation-seminar.jpg"
+          alt="Seminar participants discussing a digital business strategy"
+          width="400"
+          height="240"
+          loading="lazy"
+        >
+        <h3 id="digital-heading">Seminar: Digital Transformation</h3>
+        <dl>
+          <dt>Category</dt>
+          <dd>Seminar</dd>
+
+          <dt>Date</dt>
+          <dd><time datetime="2025-05-12">12 May 2025</time></dd>
+
+          <dt>Time</dt>
+          <dd>
+            <time datetime="2025-05-12T13:00">1:00 p.m.</time>
+            to <time datetime="2025-05-12T14:30">2:30 p.m.</time>
+          </dd>
+
+          <dt>Venue</dt>
+          <dd>Business Building, Seminar Room 102</dd>
+        </dl>
+        <p>
+          Examine how organizations use digital tools to improve services,
+          adapt their operations, and respond to changing customer needs.
+        </p>
+        <p>
+          <a href="#digital-details" aria-label="View details for Seminar: Digital Transformation">
+            View Details
+          </a>
+        </p>
+        <details id="digital-details">
+          <summary>Digital transformation seminar details</summary>
+          <p>
+            Professor Sarah Patel will lead a case study discussion on
+            organizational change, staff training, and evaluating the
+            results of digital initiatives. Students from all departments
+            are welcome.
+          </p>
+        </details>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>CampusHub — Learn, connect, and grow.</p>
+    <address>
+      CampusHub Student Services<br>
+      100 University Avenue, Learning City<br>
+      <a href="mailto:studentservices@example.edu">
+        studentservices@example.edu
+      </a>
+    </address>
+    <p><small>&copy; 2025 CampusHub. All rights reserved.</small></p>
+  </footer>
+</body>
+</html>

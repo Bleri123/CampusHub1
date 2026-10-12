@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse CampusHub university courses across technology, business, arts, languages, and engineering.">
+  <title>Our Courses | CampusHub University Portal</title>
+</head>
+<body>
+  <a href="#main-content">Skip to main content</a>
+
+  <header>
+    <p><a href="index.html">CampusHub</a></p>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html" aria-current="page">Courses</a></li>
+        <li><a href="instructors.html">Instructors</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <header>
+      <h1>Our Courses</h1>
+      <p>
+        Explore courses that develop your knowledge, strengthen your
+        practical skills, and prepare you for your next academic step.
+      </p>
+    </header>
+
+    <section aria-labelledby="filters-heading">
+      <h2 id="filters-heading">Search and filter courses</h2>
+      <p id="filters-note">
+        These controls demonstrate a course search interface.
+        Searching and filtering are not connected in this static page.
+      </p>
+
+      <form aria-describedby="filters-note">
+        <fieldset disabled>
+          <legend>Course search controls (demonstration only)</legend>
+
+          <p>
+            <label for="course-search">Search by course name</label>
+            <input
+              type="search"
+              id="course-search"
+              name="search"
+              placeholder="For example, Web Development"
+            >
+          </p>
+
+          <p>
+            <label for="department">Department</label>
+            <select id="department" name="department">
+              <option value="">All departments</option>
+              <option value="computer-science">Computer Science</option>
+              <option value="business">Business</option>
+              <option value="design">Design</option>
+              <option value="languages">Languages</option>
+              <option value="engineering">Engineering</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="level">Course level</label>
+            <select id="level" name="level">
+              <option value="">All levels</option>
+              <option value="introductory">Introductory</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+
+    <nav aria-label="Course categories">
+      <h2>Browse by department</h2>
+      <ul>
+        <li><a href="#course-catalog">All courses</a></li>
+        <li><a href="#computer-science">Computer Science</a></li>
+        <li><a href="#business">Business</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#languages">Languages</a></li>
+        <li><a href="#engineering">Engineering</a></li>
+      </ul>
+    </nav>
+
+    <section id="course-catalog" aria-labelledby="catalog-heading">
+      <h2 id="catalog-heading">Course catalog</h2>
+      <p>
+        Credits are listed using the European Credit Transfer and
+        Accumulation System (ECTS). Expand a course's details to
+        read its description and level.
+      </p>
+
+      <section id="computer-science" aria-labelledby="computer-science-heading">
+        <h3 id="computer-science-heading">Computer Science</h3>
+
+        <article>
+          <img
+            src="images/web-development.jpg"
+            alt="Student writing HTML on a laptop in a computer laboratory"
+            width="400"
+            height="240"
+            loading="lazy"
+          >
+          <h4>Web Development</h4>
+          <dl>
+            <dt>Department</dt>
+            <dd>Computer Science</dd>
+            <dt>Credits</dt>
+            <dd>6 ECTS</dd>
+          </dl>
+          <p>
+            <a href="#web-development-details" aria-label="View details for Web Development">
+              View Details
+            </a>
+          </p>
+          <details id="web-development-details">
+            <summary>Web Development course details</summary>
+            <p>
+              Learn semantic HTML, accessible page structure, CSS,
+              and introductory JavaScript through practical website projects.
+            </p>
+            <p>Level: Introductory</p>
+          </details>
+        </article>
+
+        <article>
+          <img
+            src="images/database-systems.jpg"
+            alt="Database tables and their relationships displayed on a classroom whiteboard"
+            width="400"
+            height="240"
+            loading="lazy"
+          >
+          <h4>Database Systems</h4>
+          <dl>
+            <dt>Department</dt>
+            <dd>Computer Science</dd>
+            <dt>Credits</dt>
+            <dd>6 ECTS</dd>
+          </dl>
+          <p>
+            <a href="#database-systems-details" aria-label="View details for Database Systems">
+              View Details
+            </a>
+          </p>
+          <details id="database-systems-details">
+            <summary>Database Systems course details</summary>
+            <p>
+              Study relational modeling, SQL, normalization, and
+              transaction management while designing a small database.
+            </p>
+            <p>Level: Intermediate</p>
+          </details>
+        </article>
+
+        <article>
+          <img
+            src="images/data-structures-algorithms.jpg"
+            alt="Instructor explaining a tree data structure on a whiteboard"
+            width="400"
+            height="240"
+            loading="lazy"
+          >
+          <h4>Data Structures &amp; Algorithms</h4>
+          <dl>
+            <dt>Department</dt>
+            <dd>Computer Science</dd>
+            <dt>Credits</dt>
+            <dd>6 ECTS</dd>
+          </dl>
+          <p>
+            <a href="#algorithms-details" aria-label="View details for Data Structures and Algorithms">
+              View Details
+            </a>
+          </p>
+          <details id="algorithms-details">
+            <summary>Data Structures &amp; Algorithms course details</summary>
+            <p>
+              Explore lists, stacks, trees, and graphs, and compare
+              the efficiency of searching and sorting algorithms.
+            </p>
+            <p>Level: Intermediate</p>
+          </details>
+        </article>
+
+        <article>
+          <img
+            src="images/software-engineering.jpg"
+            alt="Student team reviewing a software project plan together"
+            width="400"
+            height="240"
+            loading="lazy"
+          >
+          <h4>Software Engineering</h4>
+          <dl>
+            <dt>Department</dt>
+            <dd>Computer Science</dd>
+            <dt>Credits</dt>
+            <dd>6 ECTS</dd>
+          </dl>
+          <p>
+            <a href="#software-engineering-details" aria-label="View details for Software Engineering">
+              View Details
+            </a>
+          </p>
+          <details id="software-engineering-details">
+            <summary>Software Engineering course details</summary>
+            <p>
+              Practice requirements analysis, software design,
+              testing, and version control through a collaborative project.
+            </p>
+            <p>Level: Advanced</p>
+          </details>
+        </article>
+      </section>
+
+      <section id="business" aria-labelledby="business-heading">
+        <h3 id="business-heading">Business</h3>
+
+        <article>
+          <img
+            src="images/digital-marketing.jpg"
+            alt="Students reviewing audience research for a marketing campaign"
+            width="400"
+            height="240"
+            loading="lazy"
+          >
+          <h4>Digital Marketing</h4>
+          <dl>
+            <dt>Department</dt>
+            <dd>Business</dd>
+            <dt>Credits</dt>
+            <dd>5 ECTS</dd>
+          </dl>
+          <p>
+            <a href="#digital-marketing-details" aria-label="View details for Digital Marketing">
+              View Details
+            </a>
+          </p>
+          <details id="digital-marketing-details">
+            <summary>Digital Marketing course details</summary>
+            <p>
+              Develop skills in audience research, content planning,
+              search marketing, and campaign evaluation.
+            </p>
+            <p>Level: Introductory</p>
+          </details>
+        </article>
+
+        <article>
+          <img
+            src="images/business-management.jpg"
+            alt="Students presenting a business proposal to their classmates"
+            width="400"
+            height="240"
+            loading="lazy"
+          >
+          <h4>Business Management</h4>
+          <dl>
+            <dt>Department</dt>
+            <dd>Business</dd>
+            <dt>Credits</dt>
+            <dd>6 ECTS</dd>
+          </dl>
+          <p>
+            <a href="#business-management-details" aria-label="View details for Business Management">
+              View Details
+            </a>
+          </p>
+          <details id="business-management-details">
+            <summary>Business Management course details</summary>
+            <p>
+              Examine organizational planning, leadership, operations,
+              and decision-making through business case studies.
+            </p>
+            <p>Level: Introductory</p>
+          </details>
+        </article>
+      </section>
+
+      <section id="design" aria-labelledby="design-heading">
+        <h3 id="design-heading">Design</h3>
+
+        <article>
+          <img
+            src="images/graphic-design.jpg"
+            alt="Design student arranging typography and illustrations for a poster"
+            width="400"
+            height="240"
+            loading="lazy"
+          >
+          <h4>Graphic Design</h4>
+          <dl>
+            <dt>Department</dt>
+            <dd>Design</dd>
+            <dt>Credits</dt>
+            <dd>5 ECTS</dd>
+          </dl>
+          <p>
+            <a href="#graphic-design-details" aria-label="View details for Graphic Design">
+              View Details
+            </a>
+          </p>
+          <details id="graphic-design-details">
+            <summary>Graphic Design course details</summary>
+            <p>
+              Explore typography, color, composition, and visual
+              communication through print and digital design projects.
+            </p>
+            <p>Level: Introductory</p>
+          </details>
+        </article>
+      </section>
+
+      <section id="languages" aria-labelledby="languages-heading">
+        <h3 id="languages-heading">Languages</h3>
+
+        <article>
+          <img
+            src="images/english-language.jpg"
+            alt="Students practicing spoken English in a small classroom discussion"
+            width="400"
+            height="240"
+            loading="lazy"
+          >
+          <h4>English Language</h4>
+          <dl>
+            <dt>Department</dt>
+            <dd>Languages</dd>
+            <dt>Credits</dt>
+            <dd>4 ECTS</dd>
+          </dl>
+          <p>
+            <a href="#english-language-details" aria-label="View details for English Language">
+              View Details
+            </a>
+          </p>
+          <details id="english-language-details">
+            <summary>English Language course details</summary>
+            <p>
+              Strengthen academic reading, writing, listening, and
+              speaking through discussions, presentations, and short essays.
+            </p>
+            <p>Level: Intermediate</p>
+          </details>
+        </article>
+      </section>
+
+      <section id="engineering" aria-labelledby="engineering-heading">
+        <h3 id="engineering-heading">Engineering</h3>
+
+        <article>
+          <img
+            src="images/electrical-engineering.jpg"
+            alt="Engineering student measuring a circuit with a digital multimeter"
+            width="400"
+            height="240"
+            loading="lazy"
+          >
+          <h4>Electrical Engineering</h4>
+          <dl>
+            <dt>Department</dt>
+            <dd>Engineering</dd>
+            <dt>Credits</dt>
+            <dd>6 ECTS</dd>
+          </dl>
+          <p>
+            <a href="#electrical-engineering-details" aria-label="View details for Electrical Engineering">
+              View Details
+            </a>
+          </p>
+          <details id="electrical-engineering-details">
+            <summary>Electrical Engineering course details</summary>
+            <p>
+              Study voltage, current, circuit analysis, and basic
+              electronic components through supervised laboratory exercises.
+            </p>
+            <p>Level: Introductory</p>
+          </details>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>CampusHub — Learn, connect, and grow.</p>
+    <address>
+      CampusHub Student Services<br>
+      100 University Avenue, Learning City<br>
+      <a href="mailto:studentservices@example.edu">studentservices@example.edu</a>
+    </address>
+    <p><small>&copy; 2026 CampusHub. All rights reserved.</small></p>
+  </footer>
+</body>
+</html>
