@@ -3,17 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore CampusHub courses, campus events, and university announcements.">
+  <meta name="description" content="Explore CampusHub courses, upcoming university events, and campus announcements.">
   <title>CampusHub | University Portal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="#main-content">Skip to main content</a>
 
   <header>
-    <p><a href="index.html">CampusHub</a></p>
+    <a href="index.html">
+      <img
+        src="images/campushub-logo.png"
+        alt="CampusHub home"
+        width="200"
+        height="60"
+      >
+    </a>
 
     <nav aria-label="Main navigation">
-      <ul>
+      <ul class="link">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="courses.html">Courses</a></li>
         <li><a href="instructors.html">Instructors</a></li>
@@ -26,15 +33,18 @@
 
   <main id="main-content">
     <section aria-labelledby="hero-heading">
-      <h1 id="hero-heading">Your campus, your future</h1>
+      
+      <p style="color: red; font-size: 25px;">Welcome to CampusHub</p>
+
+      <h1 id="hero-heading">Your campus, Your future</h1>
       <p>
-        Discover courses, connect with your university community, and
-        find opportunities to grow at CampusHub.
+        Explore new ideas, develop practical skills, and connect with
+        a university community that supports your ambitions.
       </p>
-      <p><a href="courses.html">Explore courses</a></p>
+      <p><a href="courses.html" id="hero">Explore courses</a></p>
       <img
         src="images/campus.jpg"
-        alt="Students walking together outside the university library"
+        alt="Students walking along a tree-lined path toward the university library"
         width="960"
         height="480"
       >
@@ -59,7 +69,10 @@
 
     <section aria-labelledby="courses-heading">
       <h2 id="courses-heading">Featured courses</h2>
-      <p>Build practical skills through courses taught by experienced instructors.</p>
+      <p>
+        Build your knowledge through practical projects and
+        guidance from experienced instructors.
+      </p>
 
       <article>
         <img
@@ -71,17 +84,17 @@
         >
         <h3>Web Development</h3>
         <p>
-          Learn to build accessible websites with semantic HTML,
-          CSS, and JavaScript through practical projects.
+          Learn to create accessible websites using semantic HTML,
+          CSS, and introductory JavaScript.
         </p>
+        <p>Department: Computer Science</p>
         <p>Instructor: Dr. Elena Morgan</p>
-        <p>Duration: 12 weeks</p>
       </article>
 
       <article>
         <img
           src="images/database-systems.jpg"
-          alt="Students discussing a database relationship diagram on a whiteboard"
+          alt="Instructor explaining relationships between database tables on a whiteboard"
           width="400"
           height="240"
           loading="lazy"
@@ -89,16 +102,16 @@
         <h3>Database Systems</h3>
         <p>
           Explore relational database design, SQL queries, and
-          techniques for organizing and maintaining reliable data.
+          methods for organizing reliable data.
         </p>
+        <p>Department: Computer Science</p>
         <p>Instructor: Dr. Daniel Chen</p>
-        <p>Duration: 14 weeks</p>
       </article>
 
       <article>
         <img
           src="images/digital-marketing.jpg"
-          alt="Students reviewing audience research for a digital marketing project"
+          alt="Students reviewing audience research for a marketing campaign"
           width="400"
           height="240"
           loading="lazy"
@@ -106,10 +119,10 @@
         <h3>Digital Marketing</h3>
         <p>
           Develop skills in audience research, content planning,
-          search marketing, and campaign evaluation.
+          and evaluating digital campaigns.
         </p>
+        <p>Department: Business</p>
         <p>Instructor: Professor Sarah Patel</p>
-        <p>Duration: 10 weeks</p>
       </article>
 
       <article>
@@ -125,8 +138,8 @@
           Practice visual communication through typography,
           color theory, layout, and digital illustration.
         </p>
+        <p>Department: Design</p>
         <p>Instructor: Professor Lucas Rivera</p>
-        <p>Duration: 12 weeks</p>
       </article>
 
       <p><a href="courses.html">View all courses</a></p>
@@ -137,40 +150,59 @@
 
       <article>
         <h3>University Career Fair</h3>
+        <dl>
+          <dt>Date and time</dt>
+          <dd>
+            <time datetime="2026-10-22T10:00">
+              22 October 2026 at 10:00 a.m.
+            </time>
+          </dd>
+          <dt>Venue</dt>
+          <dd>Student Center, Main Hall</dd>
+        </dl>
         <p>
-          <time datetime="2026-10-22T10:00">October 22, 2026, at 10:00 a.m.</time>
-        </p>
-        <p>Location: Student Center, Main Hall</p>
-        <p>
-          Meet local employers, explore internship opportunities,
-          and get advice on preparing your first job application.
+          Meet employers, explore internships, and get advice on
+          preparing your first job application.
         </p>
       </article>
 
       <article>
-        <h3>Introduction to Web Accessibility</h3>
+        <h3>Web Accessibility Workshop</h3>
+        <dl>
+          <dt>Date and time</dt>
+          <dd>
+            <time datetime="2026-10-28T14:00">
+              28 October 2026 at 2:00 p.m.
+            </time>
+          </dd>
+          <dt>Venue</dt>
+          <dd>Technology Building, Lab 204</dd>
+        </dl>
         <p>
-          <time datetime="2026-10-28T14:00">October 28, 2026, at 2:00 p.m.</time>
-        </p>
-        <p>Location: Technology Building, Room 204</p>
-        <p>
-          Join a practical workshop on meaningful HTML, keyboard
-          navigation, and making websites easier for everyone to use.
+          Practice semantic HTML, descriptive links, and labeled
+          form controls to make websites easier to use.
         </p>
       </article>
 
       <article>
         <h3>Student Design Exhibition</h3>
+        <dl>
+          <dt>Date and time</dt>
+          <dd>
+            <time datetime="2026-11-05T16:00">
+              5 November 2026 at 4:00 p.m.
+            </time>
+          </dd>
+          <dt>Venue</dt>
+          <dd>Arts Building, Gallery</dd>
+        </dl>
         <p>
-          <time datetime="2026-11-05T16:00">November 5, 2026, at 4:00 p.m.</time>
-        </p>
-        <p>Location: Arts Building, Gallery</p>
-        <p>
-          Discover posters, illustrations, and visual identity projects
-          created by students across our design courses.
+          Explore posters, illustrations, and visual identity
+          projects created by design students.
         </p>
       </article>
 
+      <p>All event times are campus local time.</p>
       <p><a href="events.html">View all events</a></p>
     </section>
 
@@ -180,36 +212,38 @@
       <article>
         <h3>Spring course registration opens soon</h3>
         <p>
-          Published on <time datetime="2026-10-12">October 12, 2026</time>
+          Published on
+          <time datetime="2026-10-19">19 October 2026</time>
         </p>
         <p>
-          Registration for the spring semester opens on November 2.
-          Review course requirements and meet your academic adviser
-          before choosing your classes.
-        </p>
-      </article>
-
-      <article>
-        <h3>Library extends evening study hours</h3>
-        <p>
-          Published on <time datetime="2026-10-09">October 9, 2026</time>
-        </p>
-        <p>
-          From October 19 through November 6, the university library
-          will remain open until 10:00 p.m. on weekdays to support
-          midterm preparation.
+          Registration opens on 2 November. Review course
+          prerequisites and meet your academic adviser before
+          choosing your classes.
         </p>
       </article>
 
       <article>
-        <h3>Applications open for student project grants</h3>
+        <h3>Extended library study hours</h3>
         <p>
-          Published on <time datetime="2026-10-06">October 6, 2026</time>
+          Published on
+          <time datetime="2026-10-16">16 October 2026</time>
         </p>
         <p>
-          Students can submit proposals for community, research,
-          and creative projects by October 30. Application guidance
-          is available at the Student Services office.
+          From 19 October through 6 November, the university library
+          will remain open until 10:00 p.m. on weekdays.
+        </p>
+      </article>
+
+      <article>
+        <h3>Student project grant applications</h3>
+        <p>
+          Published on
+          <time datetime="2026-10-14">14 October 2026</time>
+        </p>
+        <p>
+          Submit proposals for community, research, or creative
+          projects by 30 October. Visit Student Services for
+          application guidance.
         </p>
       </article>
 
@@ -219,14 +253,13 @@
 
   <footer>
     <p>CampusHub — Learn, connect, and grow.</p>
-
     <address>
       CampusHub Student Services<br>
       100 University Avenue, Learning City<br>
-      Email:
-      <a href="mailto:studentservices@example.edu">studentservices@example.edu</a>
+      <a href="mailto:studentservices@example.edu">
+        studentservices@example.edu
+      </a>
     </address>
-
     <p><small>&copy; 2026 CampusHub. All rights reserved.</small></p>
   </footer>
 </body>
