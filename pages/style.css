@@ -1,29 +1,579 @@
+/* ---------- Design tokens and box model ---------- */
+:root {
+  --navy: #102a43;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --lightblue: #2aecfe;
+  --ink: #1f2937;
+  --muted: #5f6b7a;
+  --surface: #ffffff;
+  --page: #f5f7fb;
+  --line: #dbe3ee;
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(16, 42, 67, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-    background-color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
+  background: var(--page);
+  color: var(--ink);
+  line-height: 1.6;
 }
 
-a {
-    color: #142255;
-    text-decoration: none;
-    font-size: 30px;
+/* ---------- Shared header and navigation ---------- */
+body > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem max(5vw, 2rem);
+  background: var(--navy);
+  border-bottom: 4px solid var(--gold);
 }
 
-p {
-    font-size: 20px;
-    color: #205514;
+body > header > a {
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-decoration: none;
 }
 
-.link {
-    color: rgb(42, 42, 41);
-    font-size: large;
-    text-decoration: none;
-    font-weight: 100;
+body > header > .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+body > header > .brand img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+body > header > a img {
+  display: block;
+  width: 100px;
+  max-width: 100%;
+  height: auto;
+}
+
+body > header nav .link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body > header nav .link a {
+  display: block;
+  padding: 0.65rem 0.85rem;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+body > header nav .link a:hover,
+body > header nav .link a:focus-visible,
+body > header nav .link a[aria-current="page"] {
+  color: var(--navy);
+  background: var(--lightblue);
+  outline: none;
+}
+
+/* Header search and account icon buttons */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-panel {
+  display: flex;
+  align-items: center;
+}
+
+.search-panel summary {
+  list-style: none;
+}
+
+.search-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+/* When open, the search icon becomes a close control. */
+.search-panel[open] summary svg {
+  display: none;
+}
+
+.search-panel[open] summary::before {
+  content: "×";
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.icon-button {
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  cursor: pointer;
+  place-items: center;
+}
+
+.icon-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+  color: var(--navy);
+  background: var(--lightblue);
+  border-color: var(--lightblue);
+  outline: 3px solid rgba(50, 238, 255, 0.55);
+  outline-offset: 3px;
+}
+
+/* The native details element expands an in-header search box without JavaScript. */
+.search-panel form {
+  display: flex;
+  gap: 0.5rem;
+  width: min(19rem, 42vw);
+  margin-left: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+}
+
+.search-panel input {
+  min-width: 0;
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  color: var(--ink);
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.search-panel form button {
+  padding: 0.6rem 0.8rem;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  background: var(--blue);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-panel input:focus-visible,
+.search-panel form button:focus-visible {
+  outline: 3px solid rgba(244, 185, 66, 0.75);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Main page width and shared heading styles ---------- */
+#main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+#main-content > section {
+  margin-top: 4rem;
+}
+
+#main-content h1,
+#main-content h2,
+#main-content h3 {
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+#main-content p {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+/* ---------- Hero ---------- */
+#main-content > section[aria-labelledby="hero-heading"] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  align-items: center;
+  gap: 2.5rem;
+  padding: 5rem 0 2rem;
+}
+
+#main-content > section[aria-labelledby="hero-heading"] > p:first-child {
+  grid-column: 1;
+  margin: 0;
+  color: var(--blue) !important;
+  font-size: 1rem !important;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#hero-heading {
+  grid-column: 1;
+  margin: 0.25rem 0 0;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+#hero-heading + p {
+  grid-column: 1;
+  max-width: 60ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.15rem;
 }
 
 #hero {
-    background-color: #904545;
-    text-align: center;
+  display: inline-block;
+  padding: 0.85rem 1.25rem;
+  color: #ffffff;
+  background: var(--blue);
+  font-size: 1rem;
+  font-weight: 700;
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.24);
+}
+
+#hero:hover,
+#hero:focus-visible {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  outline: 3px solid rgba(244, 185, 66, 0.75);
+  outline-offset: 3px;
+}
+
+#main-content > section[aria-labelledby="hero-heading"] > img {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Campus statistics ---------- */
+#main-content > section[aria-labelledby="statistics-heading"] {
+  padding: 2.5rem;
+  background: var(--navy);
+  border-radius: var(--radius);
+}
+
+#statistics-heading {
+  margin-top: 0;
+  color: #ffffff !important;
+  text-align: center;
+}
+
+#main-content > section[aria-labelledby="statistics-heading"] dl {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto auto;
+  grid-auto-columns: 1fr;
+  gap: 0.25rem 1rem;
+  margin: 2rem 0 0;
+  text-align: center;
+}
+
+#main-content > section[aria-labelledby="statistics-heading"] dt {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+#main-content > section[aria-labelledby="statistics-heading"] dd {
+  margin: 0;
+  color: var(--gold);
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 800;
+}
+
+/* ---------- Featured course cards ---------- */
+#main-content > section[aria-labelledby="courses-heading"] {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+#courses-heading,
+#courses-heading + p,
+#main-content > section[aria-labelledby="courses-heading"] > p:last-child {
+  grid-column: 1 / -1;
+}
+
+#courses-heading {
+  margin: 0;
+}
+
+#courses-heading + p {
+  margin: -0.75rem 0 0.5rem;
+  color: var(--muted);
+  max-width: 65ch;
+}
+
+#main-content > section[aria-labelledby="courses-heading"] article,
+#main-content > section[aria-labelledby="events-heading"] article,
+#main-content > section[aria-labelledby="announcements-heading"] article {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+#main-content > section[aria-labelledby="courses-heading"] article {
+  padding-bottom: 1.25rem;
+}
+
+#main-content > section[aria-labelledby="courses-heading"] article img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+#main-content > section[aria-labelledby="courses-heading"] article h3,
+#main-content > section[aria-labelledby="courses-heading"] article p {
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
+}
+
+#main-content > section[aria-labelledby="courses-heading"] article h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.65rem;
+}
+
+#main-content > section[aria-labelledby="courses-heading"] article p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+#main-content > section[aria-labelledby="courses-heading"] > p:last-child a,
+#main-content > section[aria-labelledby="events-heading"] > p:last-child a,
+#main-content > section[aria-labelledby="announcements-heading"] > p:last-child a {
+  color: var(--blue);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* ---------- Upcoming events ---------- */
+#main-content > section[aria-labelledby="events-heading"],
+#main-content > section[aria-labelledby="announcements-heading"] {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+#events-heading,
+#announcements-heading,
+#main-content > section[aria-labelledby="events-heading"] > p,
+#main-content > section[aria-labelledby="announcements-heading"] > p:last-child {
+  grid-column: 1 / -1;
+}
+
+#events-heading,
+#announcements-heading {
+  margin: 0;
+}
+
+#main-content > section[aria-labelledby="events-heading"] article,
+#main-content > section[aria-labelledby="announcements-heading"] article {
+  padding: 1.5rem;
+}
+
+#main-content > section[aria-labelledby="events-heading"] article h3,
+#main-content > section[aria-labelledby="announcements-heading"] article h3 {
+  margin-top: 0;
+}
+
+#main-content > section[aria-labelledby="events-heading"] dl {
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+#main-content > section[aria-labelledby="events-heading"] dt {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+#main-content > section[aria-labelledby="events-heading"] dd {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+
+#main-content > section[aria-labelledby="events-heading"] dd:last-child {
+  margin-bottom: 0;
+}
+
+#main-content > section[aria-labelledby="events-heading"] > p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---------- Latest announcements ---------- */
+#main-content > section[aria-labelledby="announcements-heading"] article {
+  border-top: 4px solid var(--gold);
+}
+
+#main-content > section[aria-labelledby="announcements-heading"] article p:first-of-type {
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* ---------- Shared footer ---------- */
+footer {
+  padding: 3rem max(5vw, 2rem);
+  color: #dbeafe;
+  background: var(--navy);
+  text-align: center;
+}
+
+footer p,
+footer address {
+  margin: 0.5rem auto;
+  color: #dbeafe;
+  font-size: 0.95rem;
+}
+
+footer address {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+footer a {
+  color: var(--gold);
+  font-size: inherit;
+  font-weight: 700;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  color: #ffffff;
+}
+
+/* ---------- Responsive layouts ---------- */
+@media (max-width: 1000px) {
+  #main-content > section[aria-labelledby="courses-heading"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  body > header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  body > header nav .link {
+    justify-content: flex-start;
+  }
+
+  .header-actions {
+    align-self: flex-end;
+  }
+
+  .search-panel form {
+    width: min(19rem, 58vw);
+  }
+
+  #main-content > section[aria-labelledby="hero-heading"] {
+    grid-template-columns: 1fr;
+    padding-top: 3rem;
+  }
+
+  #main-content > section[aria-labelledby="hero-heading"] > img {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 240px;
+  }
+
+  #main-content > section[aria-labelledby="events-heading"],
+  #main-content > section[aria-labelledby="announcements-heading"] {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  #main-content {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  body > header {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  #main-content > section[aria-labelledby="statistics-heading"] {
+    padding: 1.5rem 1rem;
+  }
+
+  #main-content > section[aria-labelledby="statistics-heading"] dl {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+  }
+
+  #main-content > section[aria-labelledby="courses-heading"] {
+    grid-template-columns: 1fr;
+  }
+
+  body > header nav .link {
+    gap: 0.2rem;
+  }
+
+  body > header nav .link a {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.9rem;
+  }
 }
