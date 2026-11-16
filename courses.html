@@ -5,15 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Browse CampusHub university courses across technology, business, arts, languages, and engineering.">
   <title>Our Courses | CampusHub University Portal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header>
-    <p><a href="index.html">CampusHub</a></p>
+    <a href="index.html" class="brand">
+      <img
+        src="assets/logo/logo.svg"
+        alt=""
+      >
+      <span>CampusHub</span>
+    </a>
 
     <nav aria-label="Main navigation">
-      <ul>
+      <ul class="link">
         <li><a href="index.html">Home</a></li>
         <li><a href="courses.html" aria-current="page">Courses</a></li>
         <li><a href="instructors.html">Instructors</a></li>
@@ -22,65 +29,81 @@
         <li><a href="schedule.html">Schedule</a></li>
       </ul>
     </nav>
+
+    <div class="header-actions" aria-label="Quick actions">
+      <details class="search-panel">
+        <summary class="icon-button" aria-label="Toggle CampusHub search" title="Search CampusHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="6"></circle>
+            <path d="m16 16 4 4"></path>
+          </svg>
+        </summary>
+
+        <form action="courses.html" method="get" role="search">
+          <label class="visually-hidden" for="site-search">Search CampusHub</label>
+          <input id="site-search" name="search" type="search" placeholder="Search courses" required>
+          <button type="submit">Search</button>
+        </form>
+      </details>
+
+      <button type="button" class="icon-button" aria-label="Open user account" title="Open user account">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M4 21c.8-4 3.4-6 8-6s7.2 2 8 6"></path>
+        </svg>
+      </button>
+    </div>
   </header>
 
   <main id="main-content">
-    <header>
+    <div class="courses-hero">
       <h1>Our Courses</h1>
       <p>
         Explore courses that develop your knowledge, strengthen your
         practical skills, and prepare you for your next academic step.
       </p>
-    </header>
+    </div>
 
     <section aria-labelledby="filters-heading">
-      <h2 id="filters-heading">Search and filter courses</h2>
-      <p id="filters-note">
-        These controls demonstrate a course search interface.
-        Searching and filtering are not connected in this static page.
-      </p>
+      <h2 id="filters-heading" class="visually-hidden">Search and filter courses</h2>
 
-      <form aria-describedby="filters-note">
-        <fieldset disabled>
-          <legend>Course search controls (demonstration only)</legend>
+      <form action="courses.html" method="get">
+        <p class="course-search-field">
+          <label class="visually-hidden" for="course-search">Search by course name</label>
+          <input
+            type="search"
+            id="course-search"
+            name="search"
+            placeholder="For example, Web Development"
+          >
+        </p>
 
-          <p>
-            <label for="course-search">Search by course name</label>
-            <input
-              type="search"
-              id="course-search"
-              name="search"
-              placeholder="For example, Web Development"
-            >
-          </p>
+        <p>
+          <label class="visually-hidden" for="department">Department</label>
+          <select id="department" name="department">
+            <option value="">All departments</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="business">Business</option>
+            <option value="design">Design</option>
+            <option value="languages">Languages</option>
+            <option value="engineering">Engineering</option>
+          </select>
+        </p>
 
-          <p>
-            <label for="department">Department</label>
-            <select id="department" name="department">
-              <option value="">All departments</option>
-              <option value="computer-science">Computer Science</option>
-              <option value="business">Business</option>
-              <option value="design">Design</option>
-              <option value="languages">Languages</option>
-              <option value="engineering">Engineering</option>
-            </select>
-          </p>
+        <p>
+          <label class="visually-hidden" for="level">Course level</label>
+          <select id="level" name="level">
+            <option value="">All levels</option>
+            <option value="introductory">Introductory</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </p>
 
-          <p>
-            <label for="level">Course level</label>
-            <select id="level" name="level">
-              <option value="">All levels</option>
-              <option value="introductory">Introductory</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="advanced">Advanced</option>
-            </select>
-          </p>
-        </fieldset>
       </form>
     </section>
 
     <nav aria-label="Course categories">
-      <h2>Browse by department</h2>
       <ul>
         <li><a href="#course-catalog">All courses</a></li>
         <li><a href="#computer-science">Computer Science</a></li>
@@ -104,7 +127,7 @@
 
         <article>
           <img
-            src="images/web-development.jpg"
+            src="assets/images/courses/web-development.png"
             alt="Student writing HTML on a laptop in a computer laboratory"
             width="400"
             height="240"
@@ -134,7 +157,7 @@
 
         <article>
           <img
-            src="images/database-systems.jpg"
+            src="assets/images/courses/database-systems.png"
             alt="Database tables and their relationships displayed on a classroom whiteboard"
             width="400"
             height="240"
@@ -164,7 +187,7 @@
 
         <article>
           <img
-            src="images/data-structures-algorithms.jpg"
+            src="assets/images/courses/data-structures-algorithms.png"
             alt="Instructor explaining a tree data structure on a whiteboard"
             width="400"
             height="240"
@@ -194,7 +217,7 @@
 
         <article>
           <img
-            src="images/software-engineering.jpg"
+            src="assets/images/courses/software-engineering.png"
             alt="Student team reviewing a software project plan together"
             width="400"
             height="240"
@@ -228,7 +251,7 @@
 
         <article>
           <img
-            src="images/digital-marketing.jpg"
+            src="assets/images/courses/digital-marketing.png"
             alt="Students reviewing audience research for a marketing campaign"
             width="400"
             height="240"
@@ -258,7 +281,7 @@
 
         <article>
           <img
-            src="images/business-management.jpg"
+            src="assets/images/courses/business-management.png"
             alt="Students presenting a business proposal to their classmates"
             width="400"
             height="240"
@@ -292,7 +315,7 @@
 
         <article>
           <img
-            src="images/graphic-design.jpg"
+            src="assets/images/courses/graphic-design.png"
             alt="Design student arranging typography and illustrations for a poster"
             width="400"
             height="240"
@@ -326,7 +349,7 @@
 
         <article>
           <img
-            src="images/english-language.jpg"
+            src="assets/images/courses/english-language.png"
             alt="Students practicing spoken English in a small classroom discussion"
             width="400"
             height="240"
@@ -360,7 +383,7 @@
 
         <article>
           <img
-            src="images/electrical-engineering.jpg"
+            src="assets/images/courses/electrical-engineering.png"
             alt="Engineering student measuring a circuit with a digital multimeter"
             width="400"
             height="240"
