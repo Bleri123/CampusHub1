@@ -59,8 +59,7 @@
     <div class="courses-hero">
       <h1>Our Courses</h1>
       <p>
-        Explore courses that develop your knowledge, strengthen your
-        practical skills, and prepare you for your next academic step.
+        Explore a wide range of courses and find a perfect one for your career.
       </p>
     </div>
 
@@ -105,22 +104,16 @@
 
     <nav aria-label="Course categories">
       <ul>
-        <li><a href="#course-catalog">All courses</a></li>
+        <li><a href="#course-catalog" aria-current="true">All</a></li>
         <li><a href="#computer-science">Computer Science</a></li>
         <li><a href="#business">Business</a></li>
         <li><a href="#design">Design</a></li>
-        <li><a href="#languages">Languages</a></li>
         <li><a href="#engineering">Engineering</a></li>
+        <li><a href="#languages">Languages</a></li>
       </ul>
     </nav>
 
     <section id="course-catalog" aria-labelledby="catalog-heading">
-      <h2 id="catalog-heading">Course catalog</h2>
-      <p>
-        Credits are listed using the European Credit Transfer and
-        Accumulation System (ECTS). Expand a course's details to
-        read its description and level.
-      </p>
 
       <section id="computer-science" aria-labelledby="computer-science-heading">
         <h3 id="computer-science-heading">Computer Science</h3>
@@ -135,14 +128,12 @@
           >
           <h4>Web Development</h4>
           <dl>
-            <dt>Department</dt>
             <dd>Computer Science</dd>
-            <dt>Credits</dt>
             <dd>6 ECTS</dd>
           </dl>
           <p>
             <a href="#web-development-details" aria-label="View details for Web Development">
-              View Details
+              View details &rarr;
             </a>
           </p>
           <details id="web-development-details">
@@ -172,7 +163,7 @@
           </dl>
           <p>
             <a href="#database-systems-details" aria-label="View details for Database Systems">
-              View Details
+              View details &rarr;
             </a>
           </p>
           <details id="database-systems-details">
@@ -202,7 +193,7 @@
           </dl>
           <p>
             <a href="#algorithms-details" aria-label="View details for Data Structures and Algorithms">
-              View Details
+              View details &rarr;
             </a>
           </p>
           <details id="algorithms-details">
@@ -232,7 +223,7 @@
           </dl>
           <p>
             <a href="#software-engineering-details" aria-label="View details for Software Engineering">
-              View Details
+              View details &rarr;
             </a>
           </p>
           <details id="software-engineering-details">
@@ -266,7 +257,7 @@
           </dl>
           <p>
             <a href="#digital-marketing-details" aria-label="View details for Digital Marketing">
-              View Details
+              View details &rarr;
             </a>
           </p>
           <details id="digital-marketing-details">
@@ -296,7 +287,7 @@
           </dl>
           <p>
             <a href="#business-management-details" aria-label="View details for Business Management">
-              View Details
+              View details &rarr;
             </a>
           </p>
           <details id="business-management-details">
@@ -330,7 +321,7 @@
           </dl>
           <p>
             <a href="#graphic-design-details" aria-label="View details for Graphic Design">
-              View Details
+              View details &rarr;
             </a>
           </p>
           <details id="graphic-design-details">
@@ -364,7 +355,7 @@
           </dl>
           <p>
             <a href="#english-language-details" aria-label="View details for English Language">
-              View Details
+              View details &rarr;
             </a>
           </p>
           <details id="english-language-details">
@@ -398,7 +389,7 @@
           </dl>
           <p>
             <a href="#electrical-engineering-details" aria-label="View details for Electrical Engineering">
-              View Details
+              View details &rarr;
             </a>
           </p>
           <details id="electrical-engineering-details">
@@ -414,7 +405,12 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
+    <div class="footer-brand"><a href="index.html"><img src="assets/logo/logo.svg" alt="">CampusHub</a><p>Build your future with knowledge.</p></div>
+    <nav class="footer-links" aria-label="Footer navigation"><h2>Quick links</h2><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="instructors.html">Instructors</a><a href="events.html">Events</a><a href="schedule.html">Schedule</a></nav>
+    <address class="footer-contact"><h2>Contact</h2><a href="mailto:studentservices@example.edu">studentservices@example.edu</a><a href="tel:+35540123456">+355 40 123 456</a><span>Prishtina, Kosovo</span></address>
+    <nav class="footer-socials" aria-label="Follow CampusHub"><h2>Follow us</h2><div><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="YouTube">▶</a></div></nav>
+    <p class="footer-copyright"><small>&copy; 2026 CampusHub. All rights reserved.</small></p>
     <p>CampusHub — Learn, connect, and grow.</p>
     <address>
       CampusHub Student Services<br>
